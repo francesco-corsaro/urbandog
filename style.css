@@ -1,17 +1,33 @@
+:root {
+  --color-primary: #003366;
+  --color-primary-dark: #001a30;
+  --color-accent: #25D366;
+  --color-secondary: #ffd700;
+  --color-bg: #fefefe;
+  --color-bg-dark: #001f3f;
+  --color-text: #222;
+  --color-text-light: #fefefe;
+  --radius: 8px;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', Arial, sans-serif;
-  color: #222;
-  background: #fefefe;
+  color: var(--color-text);
+  background: var(--color-bg)
   transition: background 0.3s, color 0.3s;
 }
 
 body.dark-mode {
-  background: #001f3f;
-  color: #fefefe;
+ background: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+section {
+  padding-block: 2rem;
 }
 header {
-  background-color: #003366;
+  background-color: var(--color-primary);
   color: #fff;
   padding: 1rem;
   display: flex;
@@ -25,13 +41,13 @@ header {
 #theme-toggle {
   background: none;
   border: none;
-  color: #ffd700;
+  color: var(--color-secondary);
   font-size: 1.5rem;
   cursor: pointer;
 }
 .hero {
-  background-color: #003366;
-  color: #fefefe;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
   padding: 2rem;
   text-align: center;
 }
@@ -48,14 +64,30 @@ header {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.8rem 1.2rem;
-  background-color: #25D366;
-  color: white;
+ background-color: var(--color-accent);
+  color: var(--color-bg);
   text-decoration: none;
-  border-radius: 8px;
+   border-radius: var(--radius);
 }
-.services, .gallery, .contact {
+.services, .gallery, .contact, .about {
   padding: 2rem;
   text-align: center;
+   margin-inline: auto;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.about-text {
+  max-width: 600px;
 }
 .services ul {
   list-style: none;
@@ -68,10 +100,13 @@ header {
 .services li {
   margin: 0.5rem 0;
   font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .services li i {
-  margin-right: 0.5rem;
+ color: var(--color-secondary);
 }
 .gallery .images {
   display: flex;
@@ -83,7 +118,7 @@ header {
   width: 100%;
   max-width: 200px;
   height: auto;
-  border-radius: 8px;
+ border-radius: var(--radius);
 }
 .contact form {
   max-width: 500px;
@@ -95,14 +130,14 @@ header {
   margin: 0.5rem 0;
   padding: 0.8rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 .contact button {
   padding: 0.8rem;
-  background-color: #003366;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 @media (min-width: 600px) {
@@ -140,6 +175,15 @@ header {
   .hero h2 {
     font-size: 2.5rem;
   }
+  .about {
+    flex-direction: row;
+    text-align: left;
+    gap: 2rem;
+  }
+  .about img {
+    width: 200px;
+    margin-bottom: 0;
+  }
   .services {
     max-width: 800px;
     margin: 0 auto;
@@ -155,10 +199,14 @@ footer {
 }
 
 body.dark-mode header {
-  background-color: #001a30;
+   background-color: var(--color-primary-dark);
 }
 
 body.dark-mode .contact button {
-  background-color: #25D366;
-  color: #001f3f;
+  background-color: var(--color-accent);
+  color: var(--color-bg-dark);
+}
+
+body.dark-mode .hero {
+  background-color: var(--color-primary-dark);
 }
