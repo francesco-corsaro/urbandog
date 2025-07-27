@@ -4,13 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Urban Dog School</title>
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-nC1XnIcO5MlrPWFgx/nxAqK6ynXHkyE0bVfzpqFG7sAZm+iWtEI2LT23LT1GC6FS53rVbspxTvNbz+Xqhy7Vlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="Urban Dog School Logo" class="logo"/>
+    <img src="images/logo.png" alt="Urban Dog School Logo" class="logo"/>
     <h1>Urban Dog School</h1>
+    <button id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
   </header>
 
   <section class="hero">
@@ -19,22 +25,33 @@
     <a class="whatsapp-button" href="https://wa.me/393485686702?text=Ciao,+vorrei+informazioni+sui+corsi+per+cani" target="_blank">Contattaci su WhatsApp</a>
   </section>
 
+  <section class="about">
+    <h3>Chi siamo</h3>
+    <p>Urban Dog School nasce da un'idea di <strong>Francesco Corsaro</strong>, psicologo ed educatore cinofilo. Aiutiamo cani e proprietari a vivere al meglio la città con metodi moderni e rispettosi.</p>
+  </section>
+
   <section class="services">
     <h3>Cosa Offriamo</h3>
     <ul>
-      <li>Puppy Training</li>
-      <li>Educazione urbana di base</li>
-      <li>Riabilitazione comportamentale</li>
-      <li>Incontri individuali o di gruppo</li>
+      <li><i class="fa-solid fa-paw"></i> Puppy Training</li>
+      <li><i class="fa-solid fa-dog"></i> Educazione urbana di base</li>
+      <li><i class="fa-solid fa-bone"></i> Riabilitazione comportamentale</li>
+      <li><i class="fa-solid fa-users"></i> Incontri individuali o di gruppo</li>
     </ul>
   </section>
 
   <section class="gallery">
     <h3>I Nostri Amici a 4 Zampe</h3>
     <div class="images">
-      <img src="images/img1.jpg" alt="Miele sul divano"/>
-      <img src="images/img2.jpg" alt="Passeggiata nel bosco"/>
-      <img src="images/img3.jpg" alt="Cane nel locale"/>
+      <picture>
+        <img src="images/img1.jpg" alt="Miele sul divano"/>
+      </picture>
+      <picture>
+        <img src="images/img2.jpg" alt="Passeggiata nel bosco"/>
+      </picture>
+      <picture>
+        <img src="images/img3.jpg" alt="Cane nel locale"/>
+      </picture>
     </div>
   </section>
 
@@ -52,6 +69,13 @@
   <footer>
     <p>&copy; 2025 Urban Dog School | Catania</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 
 </body>
 </html>
